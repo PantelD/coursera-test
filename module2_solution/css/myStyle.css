@@ -18,8 +18,8 @@ div, p{
 	width: 160px;
 	right: 0px;
 	top: 0px;
-	border-bottom: thick solid black;
-	border-left: thick solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
 	padding: 10px 20px 5px 20px;
 	font-weight: bold;
 	font-size: 125%;
@@ -39,7 +39,7 @@ div div:nth-child(3) span{
 	background-color: #000099;
 }
 p{
-	border: thick solid black;
+	border: 1px solid black;
 	background-color: #99bbff;
 	width: 90%;
 	margin-left: auto;
