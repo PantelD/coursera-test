@@ -18,7 +18,7 @@ h1{
 	margin: 0;
 	font-weight: bold;
 }
-h1:hover, h1:active, h1:focus{
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:active, .navbar-default .navbar-brand:focus{
 	color: #060;
 	outline: 0;
 }
