@@ -1,0 +1,116 @@
+body{
+	background-color: #ff9933;
+	font-family: 'Lato', sans-serif;
+}
+
+.navbar{
+	background-color: #cc6600;
+	border: 0;
+	border-bottom: 3px solid #006600;
+	border-radius: 0 0 10px 10px;
+}
+
+.navbar .container-fluid div a{
+	color: #006600;
+}
+h1{
+	display: inline;
+	margin: 0;
+	font-weight: bold;
+}
+h1:hover, h1:active, h1:focus{
+	color: #060;
+	outline: 0;
+}
+h2{
+	color: #006600;
+	font-size: 35px;
+	margin: 30px;
+}
+.container>div>div>div{
+	background-color: #ff8000;
+	border: 2px solid #006600;
+	border-radius: 10px;
+	padding: 0 20px 20px;
+	margin-bottom: 30px;
+}
+
+.container>div>div>div:hover{
+	box-shadow: 0 0 20px #333;
+	transition: box-shadow 0.5s;
+}
+
+h3{
+	color: #060;
+	margin-bottom: 20px;
+}
+p{
+	color: #060;
+	text-align: center;
+}
+
+.text-center .btn-default, .text-center .btn-default:visited, .text-center .btn-default:focus{
+	border: 1px solid #060;
+	background-color: #cc6600;
+	color: #060;
+}
+.text-center .btn-default:hover, .text-center .btn-default:active{
+	background-color: #00aa00;
+	box-shadow: 0 0 10px #333;
+	transition: box-shadow 0.2s;
+	color: #060;
+	border: 1px solid #060;
+}
+hr{
+	border: 0;
+	border-top: 1px solid #060;
+	margin:0 auto;
+}
+
+@media (min-width: 768px){
+	.navbar{
+		padding-bottom: 15px;
+	}
+	h1{
+		font-size: 45px;
+		letter-spacing: 1px;
+	}
+	.navbar-brand{
+		margin-top: 0;
+		padding-top: 10px;
+	}
+}
+
+@media (max-width: 767px){
+	.navbar-default .navbar-collapse{
+		border: 3px solid #006600;
+		border-width: 3px 0 0;
+		border-radius: 10px;
+	}
+	.navbar-default .navbar-toggle .icon-bar{
+		background-color: #006600;
+	}
+	.navbar-default .navbar-toggle{
+		border-color: #006600;
+		border-width: 2px;
+	}
+	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:active{
+		background-color: #00cc00;
+	}
+	.navbar-brand{
+		margin-top: 0;
+		padding-top: 7px;
+	}
+	.navbar-default .navbar-collapse .navbar-nav li a, .navbar-default .navbar-collapse .navbar-nav li a:focus{
+		text-align: center;
+		font-size: 1.2em;
+		letter-spacing: 1px;
+		color: #060;
+		outline: 0;
+	}
+	.navbar-collapse .navbar-nav li a:hover, .navbar-collapse .navbar-nav li a:active{
+		background-color: #0c0;
+		color: #060;
+		border-radius: 10px;
+	}
+}
