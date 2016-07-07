@@ -95,7 +95,7 @@ hr{
 		border-width: 2px;
 	}
 	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:active{
-		background-color: #00cc00;
+		background-color: #00aa00;
 	}
 	.navbar-brand{
 		margin-top: 0;
@@ -108,7 +108,7 @@ hr{
 		outline: 0;
 	}
 	.navbar-collapse .navbar-nav li a:hover, .navbar-collapse .navbar-nav li a:active{
-		background-color: #0c0;
+		background-color: #00aa00;
 		color: #060;
 		border-radius: 10px;
 	}
