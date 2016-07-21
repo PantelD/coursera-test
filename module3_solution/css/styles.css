@@ -67,10 +67,6 @@ hr{
 	margin:0 auto;
 }
 
-.navbar-nav {
-    margin: 0px -15px;
-}
-
 @media (min-width: 768px){
 	.navbar{
 		padding-bottom: 15px;
@@ -115,5 +111,8 @@ hr{
 		background-color: #00aa00;
 		color: #060;
 		border-radius: 10px;
+	}
+	.navbar-nav {
+	    margin: 0px -15px;
 	}
 }
