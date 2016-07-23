@@ -1,22 +1,56 @@
-refer to commits by 	1. checksum (7 first numbers)
-			2. branch name
-			3. tag name
+<reference> refer to commits by 	1. checksum (7 first numbers)
+					2. branch name
+					3. tag name
 
 **REMOTE**
 
-git remote show origin //shows details about branches on remote
-git branch -vv //which branch tracks what
-git pull //== fetch and then merge
-git push
+>git remote show origin //shows details about branches on remote
+>git branch -vv //which branch tracks what
+>git pull //== fetch and then merge
+>git push
 
 **BRANCH**
 
-git branch -vv //which branch tracks what
-git checkout <remote-branch-name> //creates local branch that tracks remote branch
+>git remote show origin //shows details about branches on remote
+>git branch -vv //which branch tracks what
+>git checkout <remote-branch-name> //creates local branch that tracks remote branch
 
 **LOG**
 
-git log --oneline --decorate --graph --all
-git log -n 3 //last 3 commits
-git log -p //most detailed view (similar to diff)
-git show <checksum-number> //-p for specific commit
+>git log --oneline --decorate --graph --all
+>git log -n 3 //last 3 commits
+>git log -p //most detailed view (similar to diff)
+>git show <checksum-number> //-p for specific commit
+>git log <file-name> //display commits that include only that specific file
+
+**DISCARD CHANGES**
+
+>git reset <file-name> //removes file from staging area
+>git reset //removes all files from staging area
+>git reset --hard //removes all files from staginf and working area, undoing changing
+>git checkout <reference> <file-name> //loads specific files from older commit
+>git checkout HEAD <file-name> //undo loading of specific file
+>git clean -df//removes untracked files
+
+**ADD**
+
+>git add
+>git commit -a //adds all modified AND tracked files to staging area
+
+**CONFIG**
+
+>git config --list //see list of information
+>git config --global --edit //opens .gitconfig file under $USER
+>git config --global alias.<alias-name> <git-command>
+
+**CHECKOUT**
+
+>git checkout <reference> //tage or checksum --> detached head mode
+>git checkout <reference> <file-name> //loads specific files from older commit
+>git checkout HEAD <file-name> //undo loading of specific file
+>git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
+
+**HISTORY**
+
+>git --amend //Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit’s message without altering its snapshot
+>git rebase -i <base> //pick squash
