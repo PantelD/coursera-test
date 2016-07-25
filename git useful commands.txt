@@ -5,6 +5,7 @@
 **REMOTE**
 
 >git remote show origin //shows details about branches on remote
+git remote -v
 >git branch -vv //which branch tracks what
 >git pull //== fetch and then merge
 >git push
@@ -22,6 +23,13 @@
 >git log -p //most detailed view (similar to diff)
 >git show <checksum-number> //-p for specific commit
 >git log <file-name> //display commits that include only that specific file
+>git shortlog //team by author
+
+**HISTORY**
+
+>git --amend //Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit’s message without altering its snapshot
+>git rebase -i <base> //pick squash
+>git reflog
 
 **DISCARD CHANGES**
 
@@ -31,6 +39,16 @@
 >git checkout <reference> <file-name> //loads specific files from older commit
 >git checkout HEAD <file-name> //undo loading of specific file
 >git clean -df//removes untracked files
+>git revert
+>git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
+>git reflog
+
+**CHECKOUT**
+
+>git checkout <reference> //tage or checksum --> detached head mode
+>git checkout <reference> <file-name> //loads specific files from older commit
+>git checkout HEAD <file-name> //undo loading of specific file
+>git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
 
 **ADD**
 
@@ -43,14 +61,20 @@
 >git config --global --edit //opens .gitconfig file under $USER
 >git config --global alias.<alias-name> <git-command>
 
-**CHECKOUT**
+**EXAMPLES**
 
->git checkout <reference> //tage or checksum --> detached head mode
->git checkout <reference> <file-name> //loads specific files from older commit
->git checkout HEAD <file-name> //undo loading of specific file
->git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
+>1
+git checkout master
+git fetch origin master
+git rebase -i origin/master
+# Squash commits, fix up commit messages etc.
+git push origin master
 
-**HISTORY**
+>2
+git push -u origin marys-feature
 
->git --amend //Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit’s message without altering its snapshot
->git rebase -i <base> //pick squash
+>3
+git checkout master
+git pull
+git pull origin marys-feature
+git push
