@@ -48,13 +48,9 @@
 >git checkout <reference> //tage or checksum --> detached head mode
 >git checkout <reference> <file-name> //loads specific files from older commit
 >git checkout HEAD <file-name> //undo loading of specific file
-<<<<<<< HEAD
 >git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
 
 **HISTORY**
 
 >git --amend //Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit’s message without altering its snapshot
 >git rebase -i <base> //pick squash
-=======
->git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
->>>>>>> b714da606b66ad5e6b42b4d580ee24580fc010fa
