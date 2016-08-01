@@ -1,3 +1,7 @@
+**SOURCES**
+https://www.atlassian.com/git/
+http://gitref.org/index.html
+
 <reference> refer to commits by 	1. checksum (7 first numbers)
 					2. branch name
 					3. tag name
