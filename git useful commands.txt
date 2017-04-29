@@ -35,6 +35,9 @@ git remote -v
 >git rebase -i <base> //pick squash
 >git reflog
 
+**DIFF**
+>git diff //show unstaged changes
+	//--staged show staged changes to be commited
 **DISCARD CHANGES**
 
 >git reset <file-name> //removes file from staging area
