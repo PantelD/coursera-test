@@ -9,7 +9,7 @@ http://gitref.org/index.html
 **REMOTE**
 
 >git remote show origin //shows details about branches on remote
-git remote -v
+>git remote -v
 >git branch -vv //which branch tracks what
 >git pull //== fetch and then merge
 >git push
@@ -23,26 +23,34 @@ git remote -v
 **LOG**
 
 >git log --oneline --decorate --graph --all
->git log -n 3 //last 3 commits
+>git log -3 //last 3 commits or -n 3
 >git log -p //most detailed view (similar to diff)
->git show <checksum-number> //-p for specific commit
+>git show <checksum-number> //== -p for specific commit
 >git log <file-name> //display commits that include only that specific file
 >git shortlog //team by author
 
 **HISTORY**
 
->git --amend //Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit’s message without altering its snapshot
+>git --amend //Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commitï¿½s message without altering its snapshot
 >git rebase -i <base> //pick squash
 >git reflog
 
 **DIFF**
 >git diff //show unstaged changes
 	//--staged show staged changes to be commited
+
+**REMOVE**
+>git rm //-f if new file already staged then force unstage + delete
+	//--cached unstage but keep in working directory
+
+**RENAME**
+>git mv // mv && git rm old file && git add new file
+
 **DISCARD CHANGES**
 
 >git reset <file-name> //removes file from staging area
 >git reset //removes all files from staging area
->git reset --hard //removes all files from staginf and working area, undoing changing
+>git reset --hard //removes all files from staging and working area, undoing changing
 >git checkout <reference> <file-name> //loads specific files from older commit
 >git checkout HEAD <file-name> //undo loading of specific file
 >git clean -df//removes untracked files
@@ -62,11 +70,19 @@ git remote -v
 >git add
 >git commit -a //adds all modified AND tracked files to staging area
 
+**COMMIT**
+>git commit -v //launch core editor with diff output in comments
+>git commit -m <message>
+
 **CONFIG**
 
 >git config --list //see list of information
 >git config --global --edit //opens .gitconfig file under $USER
 >git config --global alias.<alias-name> <git-command>
+
+**HELP**
+>git help <command> //opens manual
+>git <command> //see short version of help in terminal
 
 **EXAMPLES**
 
