@@ -16,7 +16,7 @@ http://gitref.org/index.html
 >git branch -vv // which branch tracks what
 >git branch -u origin/serverfix <local branch>// current branch starts tracking origin/serverfix if not <local branch> is specified
 >git pull // == fetch and then merge
->git push
+>git push origin master:awesomebranch // pushes local master to remote awesomebranch
 >git push origin --delete serverfix // deletes serverfix branch from the server
 
 **BRANCH**
