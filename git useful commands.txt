@@ -8,81 +8,111 @@ http://gitref.org/index.html
 
 **REMOTE**
 
->git remote show origin //shows details about branches on remote
->git remote -v
->git branch -vv //which branch tracks what
->git pull //== fetch and then merge
+>git remote show origin // shows details about branches on remote
+>git remote -v // lists all remotes
+>git remote add <name> <url> // adds a remote repository
+>git remote rename old new // renames remote
+>git remote rm [remote] // removes remote
+>git branch -vv // which branch tracks what
+>git branch -u origin/serverfix <local branch>// current branch starts tracking origin/serverfix if not <local branch> is specified
+>git pull // == fetch and then merge
 >git push
+>git push origin --delete serverfix // deletes serverfix branch from the server
 
 **BRANCH**
 
->git remote show origin //shows details about branches on remote
->git branch -vv //which branch tracks what
->git checkout <remote-branch-name> //creates local branch that tracks remote branch
+>git checkout -b <new-branch's-name> // creates new branche and checks it out
+>git checkout -b serverfix origin/serverfix // after a fetch, to get our own copy of a remote branch OR vvvv
+>git checkout <remote-branch-name> // creates local branch that tracks remote branch, shortcut of the above
+>git branch -d <branch's-name> // deletes branch
+>git branch --no-merged master // if branch name not given, it assumes checked out branch
+>git remote show origin // shows details about branches on remote
+>git branch -vv // which branch tracks what
+>git branch -u origin/serverfix // current branch starts tracking origin/serverfix
+>git rebase <basebranch> <topicbranch>
+>git rebase --onto master server client // rebase client on master ignoring server branch part of client
+
+**TAG**
+
+>git tag // lists tags
+>git tag -l 'v1.4.2.*' // lists tags matching the pattern
+>git tag -a v1.4 -m 'my version 1.4' [checksum] // creates annotated tag, message is necessary, checksum is not
+>git push origin v1.5 // tags are not pushed with a simple push
+>git push origin --tags
 
 **LOG**
 
 >git log --oneline --decorate --graph --all
->git log -3 //last 3 commits or -n 3
->git log -p //most detailed view (similar to diff)
->git show <checksum-number> //== -p for specific commit
->git log <file-name> //display commits that include only that specific file
->git shortlog //team by author
+>git log -3 // last 3 commits or -n 3
+>git log -p // most detailed view (similar to diff)
+>git show <checksum-number> // == -p for specific commit
+>git log <file-name> // display commits that include only that specific file
+>git shortlog // team by author
+>git log -p -2 --stat // show details of the last 2 commits plus BARS
+
+**FETCH**
+
+>git fetch <remote's name> // or git fetch --all
 
 **HISTORY**
 
->git --amend //Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit�s message without altering its snapshot
->git rebase -i <base> //pick squash
+>git commit --amend // Combine the staged changes with the previous commit and replace the previous commit with the resulting snapshot. Running this when there is nothing staged lets you edit the previous commit�s message without altering its snapshot
+>git rebase -i <base> // pick squash
 >git reflog
 
 **DIFF**
->git diff //show unstaged changes
-	//--staged show staged changes to be commited
+
+>git diff // show unstaged changes
+	// --staged show staged changes to be commited
 
 **REMOVE**
->git rm //-f if new file already staged then force unstage + delete
-	//--cached unstage but keep in working directory
+
+>git rm // -f if new file already staged then force unstage + delete
+	// --cached unstage but keep in working directory
 
 **RENAME**
+
 >git mv // mv && git rm old file && git add new file
 
 **DISCARD CHANGES**
 
->git reset <file-name> //removes file from staging area
->git reset //removes all files from staging area
->git reset --hard //removes all files from staging and working area, undoing changing
->git checkout <reference> <file-name> //loads specific files from older commit
->git checkout HEAD <file-name> //undo loading of specific file
->git clean -df//removes untracked files
+>git reset <file-name> // removes file from staging area
+>git reset // removes all files from staging area
+>git reset --hard // removes all files from staging and working area, undoing changing
+>git checkout <reference> <file-name> // loads specific files from older commit
+>git checkout HEAD <file-name> // undo loading of specific file
+>git clean -df// removes untracked files
 >git revert
->git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
+>git reset <commit> // Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
 >git reflog
 
 **CHECKOUT**
 
->git checkout <reference> //tage or checksum --> detached head mode
->git checkout <reference> <file-name> //loads specific files from older commit
->git checkout HEAD <file-name> //undo loading of specific file
->git reset <commit> //Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
+>git checkout <reference> // tag or checksum --> detached head mode
+>git checkout <reference> <file-name> // loads specific files from older commit
+>git checkout HEAD <file-name> // undo loading of specific file
+>git reset <commit> // Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. All changes made since <commit> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.
 
 **ADD**
 
 >git add
->git commit -a //adds all modified AND tracked files to staging area
+>git commit -a // adds all modified AND tracked files to staging area
 
 **COMMIT**
->git commit -v //launch core editor with diff output in comments
+
+>git commit -v // launch core editor with diff output in comments
 >git commit -m <message>
 
 **CONFIG**
 
->git config --list //see list of information
->git config --global --edit //opens .gitconfig file under $USER
+>git config --list // see list of information
+>git config --global --edit // opens .gitconfig file under $USER
 >git config --global alias.<alias-name> <git-command>
 
 **HELP**
->git help <command> //opens manual
->git <command> //see short version of help in terminal
+
+>git help <command> // opens manual
+>git <command> -h // see short version of help in terminal
 
 **EXAMPLES**
 
