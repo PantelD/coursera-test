@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "window.zoomLevel": 0,
+  "editor.fontSize": 14,
+  "[fish]": {
+  "editor.tabSize": 4
+},
+  "editor.cursorStyle": "block"
+}
